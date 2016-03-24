@@ -1,0 +1,403 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.page{
+	width: 980px;
+	height: 1386px;
+	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	padding: 0 44px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+/*头部*/
+header{
+	border-bottom: 2px solid #938e8c;
+	position: relative;
+}
+header div{
+	width: 110px;
+	font-family: "黑体";
+	font-size: 12px;
+	color: #fff;
+	background-color: #CF415E;
+	height: 61px;
+	width: 110px;
+}
+header span{
+	position: absolute;
+	left: 8px;
+	bottom: 3px;
+}
+header time{
+	position: absolute;
+	right: 0;
+	bottom: 3px;
+	font-family: "黑体";
+	font-size: 12px;
+	color: #d45d5c;
+}
+
+/*间距控制*/
+section{
+	margin: 40px 0;
+}
+
+/*第一部分*/
+.top{
+	height: 301px;
+}
+.top .pic{
+	display: inline-block;
+	width: 641px;
+	height: 301px;
+	background-image: url(ace.png);
+	overflow: hidden;
+}
+.pic .green{
+	width: 191px;
+	height: 301px;
+	background-color: rgba(100,255,0,0.25);
+	float: left;
+}
+.pic .red{
+	width: 191px;
+	height: 301px;
+	background-color: rgba(255,0,0,0.25);
+	float: right;
+}
+.top .about{
+	width: 203px;
+	height: 301px;
+	border-top: 2px solid #cc8091;
+	float: right;
+	overflow: hidden;
+	position: relative;
+}
+.top .about .title{
+	font-size: 24px;
+	line-height: 40px;
+	text-decoration: underline;
+	color: #000;
+	font-family: "微软雅黑";
+	
+}
+.top .about .con{
+	font-family: "楷体";
+	font-size: 12px;
+	color: #676767;
+	line-height: 10px;
+}
+.about .sty-1{
+	font-size: 66px;
+	font-family: "微软雅黑";
+	font-style: italic;
+	color: #75b86b;
+	line-height: 65px;
+	margin-top: 30px;
+}
+.about .sty-2{
+	font-size: 35px;
+	font-family: "微软雅黑";
+	color: #cc8091;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+ .about .sty-3{
+	font-size: 18px;
+	font-family: "微软雅黑";
+	color: #cc8091;
+	position: absolute;
+	bottom: 16px;
+	left: 110px;
+}
+.about .sty-4{
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #cc8091;
+	position: absolute;
+	bottom: 0;
+	left: 110px;
+} 
+
+/*第二部分*/
+.center{
+	height: 160px;
+}
+.center p{
+	font-size: 12px;
+	color: #767777;
+	font-family: "宋体";
+	line-height: 16px;
+	margin-top: 8px;
+}
+.fst,.sec,.thr{
+	float: left;
+	width: 30%;
+	margin-right: 18px;
+}
+.fst h2{
+	font-size: 16px;
+	color: #418c59;
+	font-family: "微软雅黑";
+	text-decoration: underline;
+	font-weight: bold;
+}
+.sec h2{
+	font-size: 16px;
+	color: #d2994f;
+	font-family: "微软雅黑";
+	text-decoration: underline;
+	font-weight: bold;
+}
+.thr h2{
+	font-size: 16px;
+	color: #cc7680;
+	font-family: "微软雅黑";
+	text-decoration: underline;
+	font-weight: bold;
+}
+.per p{
+	font-size: 12px;
+	color: #231815;
+	font-family: "微软雅黑";
+	line-height: 16px;
+	opacity: 0.7;
+}
+.per p span{
+	font-size: 12px;
+	color: #cd4a48;
+	font-family: "微软雅黑";
+	line-height: 16px;
+	opacity: 0.7;
+}
+
+/*第三部分*/
+.bottom{
+	height: 627px;
+	overflow: hidden;
+}
+.bottom .left{
+	float: left;
+	width: 415px;
+	height: 627px;
+}
+.left .title{
+	border-bottom: 2px solid #11456b;
+}
+.bottom .left .huang{
+	font-size: 72px;
+	color: #f5e327;
+	font-family: "黑体";
+	font-weight: bold;
+	font-style:italic; 
+}
+.bottom .left .lan{
+	font-size: 42px;
+	color: #11456b;
+	font-family: "黑体";
+	font-weight: bold;
+	line-height: 16px;
+}
+.left .title p{
+	font-size: 33px;
+	color: #11456b;
+	font-family: "黑体";
+	font-weight: bold;
+}
+.some{
+	margin-top: 15px;
+	overflow: hidden;
+}
+.some .text{
+	font-size: 12px;
+	color: #767777;
+	font-family: "宋体";
+	line-height: 16px;
+}
+.text span{
+	font-size: 70px;
+	line-height: 70px;
+	color: #f5e327;
+	font-family: "微软雅黑";
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.text img{
+	float: right;
+	margin:10px 0px 10px 10px;
+}
+
+.right{
+	width: 458px;
+	height: 627px;
+	float: right;
+	position: relative;
+}
+.right .up{
+	height: 275px;
+	background-image: url(ace3.png);
+	position: relative;
+}
+.up .btto{
+	position: absolute;
+	bottom: 0;
+	height: 61px;
+	width: 458px;
+	background-color: rgba(0,0,0,0.4);
+}
+.btto span:nth-child(1){
+	position: absolute;
+	left: 40px;
+	bottom: 8.5px;
+	width: 3px;
+	height: 44px;
+	background: #72b16a;
+}
+.btto span:nth-child(2){
+	position: absolute;
+	left: 60px;
+	bottom: 20px;
+	font-size: 26px;
+	color: #fff;
+	font-family: "微软雅黑";
+}
+.btto span:nth-child(3){
+	position: absolute;
+	left: 60px;
+	bottom: 5px;
+	font-size: 12px;
+	color: #09F709;
+	font-style: italic;
+	font-family: "微软雅黑";
+	letter-spacing: 140%;
+}
+.right .down{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 459px;
+	height: 318px;
+	padding-top: 30px;
+	padding-right: 20px; 
+	background: #E6E6E6;
+	position: absolute;
+	bottom: 0;
+}
+.down>p{
+	margin-left: 30px;
+	font-size: 16px;
+	color: #5a5b5b;
+	font-family: "宋体";
+	text-align: left;
+	line-height: 40px;
+}
+.down p .weiba{
+	font-size: 12px;
+	color: #5a5b5b;
+	font-family: "宋体";
+	font-style: italic;
+	text-align: right;
+	line-height: 40px;
+}
+.down .sanjiao{
+	width: 0;
+	height: 0;
+	margin-right: 10px;
+	border-left: 5px solid #E6E6E6;
+	border-right:5px solid #E6E6E6; 
+	border-bottom: 10px solid #1B1BB1;
+	position: relative;
+	top: -10px;
+}
+
+.down .pink{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 260px;
+	height: 160px;
+	background: #d45d5c;
+	float: left;
+	margin-right:15px; 
+	opacity: 0.8;
+	padding: 7.5px 10px;
+	position: relative;
+}
+.pink>span{
+	font-size: 110px;
+	font-family: "微软雅黑";
+	color: #fff;
+	float: left;
+}
+.pink>div{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 94px;
+	width: 165px;
+	border-left: 2px solid #fff;
+	position: absolute;
+	top: 33px;
+	left: 80px;
+	padding-top: 10px;
+}
+.pink p:nth-child(1),.pink p:nth-child(2){
+	font-size: 21px;
+	font-family: "黑体";
+	color: #fff;
+	font-style: italic;
+	line-height: 24px;
+	margin-left: 8px; 
+}
+.pink p:nth-child(3){
+	font-size: 12px;
+	font-family: "黑体";
+	color: #fff;
+	line-height: 12px;
+	margin-left: 8px; 
+}
+
+.word{
+	height: 160px;
+	width: 150px;
+	font-size: 14px;
+	font-family: "黑体";
+	color: #5a5b5b;
+	font-style: italic;
+	line-height: 16px;
+	float: left;
+	margin-top: 20px;
+}
+.word span{
+	font-size: 72px;
+	font-family: "黑体";
+	color: #d45d5c;
+}
+.word .l{
+	float: left;
+	position: relative;
+	left: -30px;
+	bottom: -10px;
+}
+.word .r{
+	float: right;
+	position: relative;
+	bottom: -30px;
+}
+/*底部*/
+footer{
+	width: 892px;
+	height: 60px;
+	border-top: 1px solid #938e8c;
+	font-size: 12px;
+	font-family: "黑体";
+	color: #d45d5c;
+	position: absolute;
+	bottom: 0;
+}
+footer span{
+	float: right;
+}

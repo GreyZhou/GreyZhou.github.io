@@ -1,0 +1,40 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.page{
+	display: flex;
+	padding:20px;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+[class*=item_]{
+	box-sizing: border-box;
+	border:2px solid #f00;
+	width: 150px;
+	margin-bottom: 20px;
+}
+.item_1{
+	height: 120px;
+}
+.item_2{
+	height: 100px;
+}
+.item_3{
+	height: 40px;
+}
+.item_4{
+	border-color:#0f0;
+	height: 200px;
+}
+
+@media (max-width: 640px){
+	.page{
+		align-items: flex-start;
+	}
+	.item_4{
+		order:-1;
+	}
+
+}

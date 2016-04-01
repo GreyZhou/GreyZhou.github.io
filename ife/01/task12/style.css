@@ -1,0 +1,186 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+table th{
+	background: #000;
+	color: #fff;
+	text-align: left;
+}
+table td{
+	color: red;
+}
+table tr:nth-child(2n+1){
+	background: #ccc;
+}
+table tr:nth-child(n+5) td{
+	color: #000;
+}
+
+
+input{
+	margin-top: 50px;
+	width: 150px;
+	transition: 1s width;
+}
+input:focus{
+	width:300px;
+}
+
+
+.banner{
+	width: 300px;
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 50px;
+}
+.banner ul{
+	width: 300%;
+	height: 100%;
+	position: relative;
+	left: 0;
+	animation:hd_1 5s ease-in infinite;
+	-moz-animation:hd_1 5s ease-in infinite;
+	-webkit-animation:hd_1 5s ease-in infinite;
+}
+.banner ul li{
+	list-style-type: none;
+	float: left;
+	width: 300px;
+	height: 100px;
+}
+.banner ul li:nth-child(1){
+	background: blue;
+}
+.banner ul li:nth-child(2){
+	background: red;
+}
+.banner ul li:nth-child(3){
+	background: yellow;
+}
+
+.banner+div{
+	position: relative;
+	top: -30px;
+	left: 210px;
+}
+.banner+div label{
+	float: left;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 30px;
+	background: #ccc;
+	opacity: 0.4;
+	text-decoration: none;
+}
+.banner+div label:hover{
+	background: #fff;
+	opacity: 0.6;
+}
+
+@keyframes hd_1{
+	0%{
+		left: 0;
+	}
+	22.22%{
+		left:0;	
+	}
+	35.55%{
+		left:-300px;
+	}
+	57.77%{
+		left: -300px;
+	}
+	71.1%{
+		left: -600px;
+	}
+	93.22%{
+		left: -600px;
+	}
+	100%{
+		left: 0;
+	}
+
+}
+
+@keyframes hd_2{
+	0%{
+		left: -300px;
+	}
+	22.22%{
+		left:-300px;	
+	}
+	35.55%{
+		left:-600px;
+	}
+	57.77%{
+		left: -600px;
+	}
+	64.43%{
+		left: 0;
+	}
+	86.65%{
+		left: 0;
+	}
+	100%{
+		left: -300px;
+	}
+
+}
+@keyframes hd_3{
+	0%{
+		left: -600px;
+	}
+	22.22%{
+		left:-600px;	
+	}
+	28.88%{
+		left:0;
+	}
+	51.1%{
+		left: 0;
+	}
+	64.43%{
+		left: -300px;
+	}
+	86.65%{
+		left: -300px;
+	}
+	100%{
+		left: -600px;
+	}
+
+}
+
+#sel_1:active ~ ul {
+	-webkit-animation-name:none;
+  	left:0;
+}
+
+#sel_2:active ~ ul {
+	-webkit-animation-name:none;
+  	left:-300px;
+}
+
+#sel_3:active ~ ul {
+  	-webkit-animation-name:none;
+  	left:-600px;
+}
+
+#sel_1:checked ~ ul {
+  	-webkit-animation-name:hd_1;
+}
+#sel_2:checked ~ ul {
+  	-webkit-animation-name:hd_2;
+}
+#sel_3:checked ~ ul {
+  	-webkit-animation-name:hd_3;
+}
+
+.banner input{
+	display: none;
+}

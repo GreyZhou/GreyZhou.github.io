@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务十九：基础JavaScript练习（二）</title>
+	<style type="text/css">
+		input{
+			background: #fff;
+			height: 20px;
+			width: 60px;
+			font-size: 12px;
+		}
+		#text{
+			width:200px;
+			height: 20px;
+			font-size: 15px;
+		}
+		/*#right_1{
+			margin-right: 50px;
+		}*/
+		#right_2{
+			margin-right: 50px;
+		}
+		#wrap{
+			display: flex;
+			align-items: flex-end;
+        	width: 100%;
+        	height:350px;
+		}
+		#wrap div{
+			display: inline-block;
+			background: red;
+			color: #fff;
+			height: 50px;
+			width: 20px;
+			font-size: 10px;
+			line-height: 20px;
+			text-align: center;
+			margin: 0 2px;
+		}
+
+	</style>
+</head>
+<body>
+	<input type="text" id="text" title="ok" placeholder="请输入10~100间的数字" />
+	<input type="button" id="left_1" value="左侧入"/>
+	<input type="button" id="right_1" value="右侧入"/>
+	<input type="button" id="left_2" value="左侧出"/>
+	<input type="button" id="right_2" value="右侧出"/>
+	<input type="button" id="random" value="随机数据"/>
+	<input type="button" id="sort" value="排序"/>
+	
+	<div id="wrap">
+		
+	</div>
+
+	<script type="text/javascript" src="task19.js"></script>
+</body>
+</html>

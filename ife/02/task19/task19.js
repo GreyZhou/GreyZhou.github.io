@@ -38,7 +38,7 @@ window.onload=function () {
 		wrap.innerHTML="";
 		for (i=0;i<a;i++){
 			var x=document.createElement("div");
-			var h=Math.ceil(Math.random()*90+10);
+			var h=Math.round(Math.random()*90+10);
 			x.innerHTML=h;
 			x.style.height=h*3+"px";
 			color(x);
@@ -50,6 +50,30 @@ window.onload=function () {
 		var h=a.innerHTML;
 		a.style.height=h*3+"px";
 		color(a);
+	}
+
+	function exchange(a,b){
+		setTimeout(function(){
+			var a=parseInt(list[a].innerHTML);
+			var b=parseInt(list[b].innerHTML);
+			var c=0;//临时储存
+			c=a;
+			list[a].innerHTML=b;
+			list[b].innerHTML=c;
+			
+			paint(list[a]);
+			paint(list[b]);
+		},300);
+	}
+
+	function Sort(callback){
+		for(i=0;i<list.length-1;i++){
+			for(j=0;j<49-i;j++){
+				if(list[j].innerHTML > list[j+1].innerHTML){
+					callback(j,j+1);
+				}
+			}
+		}
 	}
 
 	left_1.onclick=function(){
@@ -103,38 +127,61 @@ window.onload=function () {
 	
 
 	sort.onclick=function(){//可视化排序
-		var list=wrap.getElementsByTagName('div');
 		var i=0;
-		var j=1;
-		var min;
-		//勉强运行版本一号
-		// var timer=setInterval(function(){
-		// 	if(i==50){
-		// 		clearInterval(timer);
-		// 	}else{
-		// 		var timer_j=setInterval(function(){
-		// 			if (j==49-i) {
-		// 				j=0;
-		// 				clearInterval(timer_j);
-		// 			}else{
-		// 				if( parseInt(list[j].innerHTML) > parseInt(list[j+1].innerHTML) ){
-		// 					list[j].innerHTML=parseInt(list[j].innerHTML)-parseInt(list[j+1].innerHTML);
-		// 					list[j+1].innerHTML=parseInt(list[j+1].innerHTML)+parseInt(list[j].innerHTML);
-		// 					list[j].innerHTML=parseInt(list[j+1].innerHTML)-parseInt(list[j].innerHTML);
-		// 					paint(list[j]);
-		// 					paint(list[j+1]);
-		// 				}	
-		// 			}
+		var tmp;
+		var timer=setInterval(function(){
+			if(i>=list.length){
+				clearInterval(timer);
+				return;
+			}
+			for(var j=i+1;j<list.length;j++){
+				if( parseInt(list[j].innerHTML) <= parseInt(list[i].innerHTML) ){
+					tmp=list[i].innerHTML;
+					list[i].innerHTML=list[j].innerHTML;
+					list[j].innerHTML=tmp;
+					paint(list[i]);
+					paint(list[j]);
+				}				
+			}
+			i++;
+		},50)
+	}
 
-		// 			j++;
-		// 		},50);
-		// 	}
+	// sort.onclick=function(){//可视化排序
+	// 	var list=wrap.getElementsByTagName('div');
+	// 	var i=0;
+	// 	var j=1;
+	// 	var min;
+	// 	//勉强运行版本一号
+	// 	var timer=setInterval(function(){
+	// 		if(i==50){
+	// 			clearInterval(timer);
+	// 			return;
+	// 		}else{
+	// 			var timer_j=setInterval(function(){
+	// 				if (j==49-i) {
+	// 					j=0;
+	// 					clearInterval(timer_j);
+	// 					return;
+	// 				}else{
+	// 					if( parseInt(list[j].innerHTML) > parseInt(list[j+1].innerHTML) ){
+	// 						list[j].innerHTML=parseInt(list[j].innerHTML)-parseInt(list[j+1].innerHTML);
+	// 						list[j+1].innerHTML=parseInt(list[j+1].innerHTML)+parseInt(list[j].innerHTML);
+	// 						list[j].innerHTML=parseInt(list[j+1].innerHTML)-parseInt(list[j].innerHTML);
+	// 						paint(list[j]);
+	// 						paint(list[j+1]);
+	// 					}	
+	// 				}
+
+	// 				j++;
+	// 			},50);
+	// 		}
 			
-		// 	i++;
-		// },2000)
-		// 
-		// 
-		// 
+	// 		i++;
+	// 	},2000)
+	// }	
+		
+		
 		
 		// for(i=0;a=list.length,i<a;i++){
 		// 	var timer=setInterval(function(){
@@ -159,25 +206,26 @@ window.onload=function () {
 			
 		// }	
 		
-		for(var i=0;l=list.length,i<l;i++){
-			for(j=0;j<l;j++){
-				if(list[j].innerHTML <= list[i].innerHTML ){
-					min=j;
-				}
-			}
+		// for(var i=0;l=list.length,i<l;i++){
+		// 	for(j=0;j<l;j++){
+		// 		if(list[j].innerHTML <= list[i].innerHTML ){
+		// 			min=j;
+		// 		}
+		// 	}
 			
-			setTimeout(function(){
-				var a=parseInt(list[i].innerHTML);
-				var b=parseInt(list[min].innerHTML);
-				var c=0;//临时储存
-				c=a;
-				list[i].innerHTML=b;
-				list[min].innerHTML=c;
+		// 	setTimeout(function(){
+		// 		var a=parseInt(list[i].innerHTML);
+		// 		var b=parseInt(list[min].innerHTML);
+		// 		var c=0;//临时储存
+		// 		c=a;
+		// 		list[i].innerHTML=b;
+		// 		list[min].innerHTML=c;
 				
-				paint(list[i]);
-				paint(list[min]);
-			},300);
-		}
-	}
-
+		// 		paint(list[i]);
+		// 		paint(list[min]);
+		// 	},300);
+		// }
+	// }
+		
 };
+

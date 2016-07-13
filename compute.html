@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算器思密达</title>
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		body{
+			background:rgba(210,105,30,0.2);
+		}
+		.all{
+			width:430px;
+			height:390px;
+			padding: 40px 20px 0 20px;
+			background: #D5D5D5;
+			margin:200px auto;
+			border: 2px solid #FFAD77;
+			overflow: hidden;
+			position: relative;
+
+			user-select:none;
+			-webkit-user-select:none;
+			-moz-user-select:none;
+			-o-user-select:none;
+		}
+		/*计算器主体设置完成*/
+
+		.view{
+			width: 100%;
+			height: 80px;
+			background: #999;
+			margin-bottom: 30px;
+			box-shadow: 5px 5px 5px #000 inset;
+			text-align: right;
+			font-size: 70px;
+			line-height: 80px;
+		}
+		#change{
+			width:20px;
+			height: 20px;
+			border-radius: 50%;
+			position: absolute;
+			top: 10px;
+			left: 20px;
+			background: #fff;
+			font-size: 15px;
+			color: #FFAD77;
+			text-align: center;
+			line-height:20px;
+			overflow: hidden;
+		}
+		/*视窗部分*/
+
+		span{
+			display: inline-block;
+			width:70px;
+			height: 50px;
+			margin-right: 20px;
+			margin-bottom: 20px;
+			text-align: center;
+			font-size: 20px;
+			line-height:50px;
+			font-weight: 900;
+			background:#FFAD77;
+			box-sizing: border-box;
+		}
+		.easy div span:last-child {
+			margin-right: 0;
+		}
+		/*设置按钮和动画关键帧*/
+
+		.main{
+			width: 100%;
+			height: 280px;
+			position: relative;
+		}
+		.add{
+			position: absolute;
+			right: 430px;
+			width: 90px;
+		}
+		.easy{
+			position: absolute;
+			right: 0;
+			width:430px;
+		}
+		.easy div{
+			width: 100%;
+		}
+		.easy span{
+			float: left;
+		}
+		/*功能区按钮排列*/
+
+		.add span{
+			background: #fff;
+			color: #FFAD77;
+		}
+		.easy span{
+			color: #fff;
+		}
+		.easy div:first-child span:nth-child(4),
+		.easy div:first-child span:nth-child(5){
+			background: #F3F350;
+			color: #808080;
+		}
+		.easy div:last-child span:nth-child(2),
+		.easy div:last-child span:nth-child(3){
+			width:160px;
+		}
+		/*按钮颜色和细节微调*/
+		
+		.add span:hover{
+			background: #FFCF88;
+			color: #fff;
+		}
+		.easy span:hover{
+			background: #FFCF88;
+			color:#000;
+		}
+		.easy div:first-child span:nth-child(4):hover,
+		.easy div:first-child span:nth-child(5):hover{
+			background: #89ED9D;
+			color:#000 ;
+		}
+		#change:hover{
+			background: #FFCF88;
+			color: #fff; 
+		}
+		/*鼠标悬浮按钮，改变颜色*/
+	</style>
+</head>
+
+<body>
+	<div class="all" id="all">
+		<div class="view" id="view">0</div>
+		<div id="change">&#8644;</div>
+		<!-- 数字显示区 -->
+		<div class="main">
+			<div class="add">
+				<span id="fuc_pi">&Pi;</span>
+				<span id="fuc_pow">&Lambda;</span>
+				<span id="fuc_sin">sin</span>
+				<span id="fuc_cos">cos</span>
+			</div>
+			<!-- 增加的功能区 -->
+			<div class="easy">
+				<div>
+					<span id="num_7">7</span>
+					<span id="num_8">8</span>
+					<span id="num_9">9</span>
+					<span id="easy_del">DEL</span>
+					<span id="easy_ac">AC</span>
+				</div>
+				<div>
+					<span id="num_4">4</span>
+					<span id="num_5">5</span>
+					<span id="num_6">6</span>
+					<span id="easy_mul">&times;</span>
+					<span id="easy_div">&divide;</span>
+				</div>
+				<div>
+					<span id="num_1">1</span>
+					<span id="num_2">2</span>
+					<span id="num_3">3</span>
+					<span id="easy_plus">+</span>
+					<span id="easy_minus">-</span>
+				</div>
+				<div>
+					<span id="num_0">0</span>
+					<span id="easy_spot">.</span>
+					<span id="easy_equal">=</span>
+				</div>
+			</div>
+			<!-- 基本功能区 -->
+		</div>
+		<!-- 主体按钮区结束 -->
+	</div>
+	<!-- 所有部分结束 -->
+	<script type="text/javascript">
+		window.onload=function(){
+			var all=document.getElementById('all');
+			var view=document.getElementById('view');  
+			//视窗，对其文本进行操作，重中之重
+			var flag=false;
+			//是否有小数点
+			var flag2=false;
+			//是否有π
+			var easy=true;
+			//目前的显示模式
+			var num=[];
+			//存储计算的数据
+			var easy_ac=document.getElementById('easy_ac');
+			//清除键
+			var easy_del=document.getElementById('easy_del');//回退键
+			var easy_mul=document.getElementById('easy_mul');//乘法键
+			var easy_div=document.getElementById('easy_div');//除法键
+			var easy_plus=document.getElementById('easy_plus');//加法键
+			var easy_minus=document.getElementById('easy_minus');//减法键
+			var fuc_pi=document.getElementById('fuc_pi');//π键
+			var fuc_pow=document.getElementById('fuc_pow');//阶乘键
+			var fuc_sin=document.getElementById('fuc_sin');//sin键
+			var fuc_cos=document.getElementById('fuc_cos');//cos键
+			var num_0=document.getElementById('num_0');//数字0键
+			var easy_spot=document.getElementById('easy_spot');//小数点
+			var easy_equal=document.getElementById('easy_equal');//等于号
+			var change=document.getElementById('change');//变形键
+
+			var spans=document.getElementsByTagName('span');//获得所有主体部分的按钮
+
+			document.oncontextmenu=new Function("event.returnValue=false;");
+			document.onselectstart=new Function("event.returnValue=false;"); 
+			//屏蔽右键
+			for(var i=0;i<spans.length;i++){
+				(function(i){
+					spans[i].onmousedown=function(e){
+						var btn=e||event;
+						if(btn.button==0){
+							this.style.border="2px solid #fff";
+						}	
+					}
+					spans[i].onmouseup=function(){
+						this.style.border="";
+					}
+					spans[i].onmouseout=function(){
+						this.style.border="";
+					}		
+				})(i);
+			}
+			//闭包绑定点击的动画效果
+			
+			easy_ac.onclick=function(){//清空键点击
+				view.innerHTML="0";
+				flag=false;
+				flag2=false;
+				num=[];
+				unlight();
+			}
+			easy_del.onclick=function(){//删除键点击
+				if(noerror()&& num[3]!=1 && view.innerHTML!="sin(" && view.innerHTML!="cos("){
+					if(flag==true|| flag2==true){
+						del();
+						if(view.innerHTML.indexOf(".")<0){
+							flag=false;
+							console.log("小数点重置成功");
+						}
+						if(num[4]){
+							num[4]=0;
+							flag2=false;
+							console.log("π重置成功");
+						}
+					}else{
+						del();
+					}
+					
+
+				}
+			}
+			for(var i=1;i<10;i++){
+			//数字键1~9打包处理点击
+				(function(i){
+					document.getElementById("num_"+i).onclick=function(){
+						if(check() && noerror()){
+							if(view.innerHTML=="0"|| view.innerHTML=="sin(" ||view.innerHTML=="cos("){
+								view.innerHTML=i;
+							}else{
+								view.innerHTML+=i;
+							}
+							unlight();	
+						}
+					}
+
+				})(i);
+			}
+
+			easy_spot.onclick=function(){//小数点
+				if(!flag &&check()&&view.innerHTML!=""&& noerror()){
+					if(view.innerHTML=="sin(" ||view.innerHTML=="cos("){
+						view.innerHTML="0.";
+					}else{
+						view.innerHTML+=".";
+						flag=true;
+					}					
+				}
+			}
+			num_0.onclick=function(){//数字0键点击
+				if(check()&&view.innerHTML!="0"&&noerror()){
+					if(view.innerHTML=="sin(" ||view.innerHTML=="cos("){
+						view.innerHTML="0";
+					}else{
+						view.innerHTML+="0";
+						unlight();
+					}
+				}
+			}
+			easy_plus.onclick=function(){//加号键的点击
+				if(ok() && noerror()){
+					compute();
+					view.innerHTML="";
+					flag=false;
+					light();
+					num[1]="+";
+					num[3]=0;//允许数字添加和删除
+					console.log("加法前一位:"+num[0]);
+					console.log("加法解锁:"+num[3])
+				}
+			}
+			easy_minus.onclick=function(){//减号键的点击
+				if(noerror()){
+					if(view.innerHTML==""||(view.innerHTML=="0"&& num[1]!=1)|| view.innerHTML=="sin(" ||view.innerHTML=="cos("){
+						view.innerHTML="-";
+					}else{
+						compute();
+						view.innerHTML="";
+						flag=false;
+						light();
+						num[1]="-";
+						num[3]=0;
+						console.log("减法前一位:"+num[0]);
+					}					
+				}
+			}
+			easy_mul.onclick=function(){//乘号键点击
+				if (ok() && noerror()) {
+					compute();
+					view.innerHTML="";
+					flag=false;
+					light();
+					num[1]="mul";
+					num[3]=0;
+					console.log("乘法前一位:"+num[0]);
+				}
+			}
+			easy_div.onclick=function(){//除号键点击
+				if (ok() && noerror()) {
+					compute();
+					view.innerHTML="";
+					flag=false;
+					light();
+					num[1]="div";
+					num[3]=0;
+					console.log("被除数:"+num[0]);
+				}
+			}
+
+			easy_equal.onclick=function(){
+				if (ok()&& noerror()) {//小彩蛋
+					if (view.innerHTML=="520" && num[3]!=0){
+						view.innerHTML="么么哒&hearts;";
+						num[5]=1;
+					}else if(view.innerHTML=="sin(" || view.innerHTML=="cos("){
+						view.innerHTML="0";
+					}else{
+						compute();
+						view.innerHTML=num[0];
+						if((num[3]==0 && view.innerHTML!=0)||num[3]==undefined){num[3]=1;}//等于的结果禁止数字添加和删除,判断语句防止误锁
+						num[1]=0;//清空储存的运算符号
+						console.log("等于:"+num[0]);
+						console.log("是否锁死:"+num[3])
+					}
+				}
+			}
+
+			fuc_pi.onclick=function(){//拓展区 π键点击
+				if((view.innerHTML=="0" ||view.innerHTML==""|| view.innerHTML=="sin(" || view.innerHTML=="cos(" || view.innerHTML=="-")&& noerror()){
+					if (view.innerHTML=="-") {
+						view.innerHTML+="&Pi;";
+					}else{
+						view.innerHTML="&Pi;";
+					}
+					flag2=true;//判断有没有π
+					num[4]=Math.PI;
+				}
+			}
+			fuc_pow.onclick=function(){
+				if (ok() && noerror()) {
+					compute();
+					view.innerHTML="";
+					flag=false;
+					light();
+					num[1]="pow";
+					num[3]=0;
+					console.log("阶乘底数:"+num[0]);
+				}
+			}
+			fuc_sin.onclick=function(){
+				if (ok() && noerror()) {
+					if(view.innerHTML=="0" && num[3]==undefined){
+						num[1]="sin";
+						view.innerHTML="sin(";
+						console.log(num[0]);
+					}
+				}
+			}
+			fuc_cos.onclick=function(){
+				if (ok() && noerror()) {
+					if(view.innerHTML=="0" && num[3]==undefined){
+						num[1]="cos";
+						view.innerHTML="cos(";
+						console.log(num[0]);
+					}
+				}
+			}
+			change.onclick=function(){
+				var tar=easy?520:430;//目标宽度
+
+				var timer=setInterval(function(){
+					var speed=(tar-(all.offsetWidth-44))/3;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					if(tar==all.offsetWidth-44){
+						clearInterval(timer);
+						console.log("")
+					}
+					all.style.width=(all.offsetWidth-44)+speed+"px";
+				},
+				30)
+				easy=!easy;
+			}
+			//变形键点击事件
+			change.onmousedown=function(e){
+				var btn=e||event;
+				if(btn.button==0){
+					this.style.border="2px solid #fff";
+				}	
+			}
+			change.onmouseup=function(){
+				this.style.border="";
+			}
+			change.onmouseout=function(){
+				this.style.border="";
+			}
+			//变形键的点击样式控制
+
+			function check(){//检测数字输入是否超过长度，是否有π，控制数字输入
+				var val=view.innerHTML;
+				if(flag2){return false;}
+				if(num[3]==1){return false;}//禁止编辑
+				val=String(Math.abs(parseFloat(val)));
+				console.log("绝对值化:"+val);
+				if(flag &&val.length<10){
+					console.log("输入字符长度"+val+","+val.length);
+					return true;
+				}else if(!flag && val.length<9){
+					console.log("输入字符长度"+val+","+val.length);
+					return true;
+				}else{
+					alert("最多只能显示九个数字");
+					console.log("输入字符长度"+val+","+val.length);
+					return false;
+				}
+
+			}
+			function ok(){
+				if(view.innerHTML!=""&& view.innerHTML!="sin(" && view.innerHTML!="cos("){
+					return true;
+				}else{
+					alert("请输入数字！");
+					return false;
+				}
+			}
+
+			function noerror(){//出错时,被锁死返回false
+				if(view.innerHTML=="Math Error" ||num[5]==1){//num[5]=1 彩蛋类型的锁死
+					return false;
+				}else{
+					return true;
+				}
+			}
+			function del(){
+				var val=view.innerHTML;
+				if(val.length>1){
+					view.innerHTML=val.substring(0,val.length-1);
+				}else{
+					view.innerHTML="0";
+				}
+			}
+			function light(){
+				view.style.background="#A2A2A2";
+			}
+			function unlight(){
+				view.style.background="#999";
+			}
+			function compute(){//计算和验证数值是否合法
+				var val=view.innerHTML;
+				if(num[4]){
+					val=num[4];
+					num[4]=0;
+					console.log("成功赋值为π"+val);
+				}
+				if(val=="-"){
+					val=0;
+				}
+				if(num[0]||num[0]==0){
+					if(num[0]>9999999999||num[0]<-9999999999){
+						view.innerHTML="Math Error";
+					}else{
+						if(num[1]=="+"){
+							num[0]+=parseFloat(val);
+						}else if(num[1]=="-"){
+							num[0]-=parseFloat(val);
+						}else if(num[1]=="mul"){
+							num[0]*=parseFloat(val);
+						}else if(num[1]=="div"){
+							num[0]/=parseFloat(val);
+						}else if(num[1]=="pow"){
+							num[0]=Math.pow(num[0],parseFloat(val));
+						}else{//点过等于号，运算符号会被清空
+							num[0]=parseFloat(val);
+						}			
+					}
+				}else{
+					if(num[1]=="sin"){
+						num[0]=Math.sin(parseFloat(val)).toFixed(9);
+						// console.log("sin计算前的:"+parseFloat(val));
+						console.log("sin计算后的:"+num[0]);
+					}else if(num[1]=="cos"){
+						num[0]=Math.cos(parseFloat(val)).toFixed(9);
+						console.log("cos计算后的:"+num[0]);
+					}else{
+						num[0]=parseFloat(val);
+						console.log("直接赋值:"+num[0]);
+						//不是特殊字符，会把值存入num[0]	
+					}					
+				}
+
+				if(num[0]>9999999999||num[0]<-9999999999){
+					num[0]="Math Error";
+					//整数越界
+					return;
+				}			
+				//小数越界
+				var str=String(num[0]);
+				// console.log("数转字符串:"+str);
+				str=str.substring(0,11);
+				// console.log("截断长度后:"+str);
+				num[0]=parseFloat(str);
+				console.log("计算完的值:"+num[0]);
+
+				if (String(num[0]).indexOf(".")<0) {
+					flag=false;
+				}else{
+					flag=true;
+				}//对结果进行再次验证，保证没有小数点的判断正确
+				flag2=false;
+				//计算完，π标记为移除
+			}
+
+			
+		}
+	</script>
+</body>
+</html>

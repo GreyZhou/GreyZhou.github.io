@@ -1,0 +1,394 @@
+.dgkt-course-learn-wrap .head {
+  height: 200px;
+  background-image: url("");
+  background: #cc5965;
+  color: #fff;
+}
+.dgkt-course-learn-wrap .head > .am-container {
+  position: relative;
+  height: 100%;
+}
+.dgkt-course-learn-wrap .head > .am-container .course-intro {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.dgkt-course-learn-wrap .head > .am-container .course-name {
+  font-size: 40px;
+  margin: 15px 0;
+}
+.dgkt-course-learn-wrap .head > .am-container .course-infor {
+  width: 52%;
+  clear: both;
+}
+.dgkt-course-learn-wrap .head > .am-container .course-infor > div {
+  padding: 0;
+  display: inline-block;
+  float: left;
+  width: 33.33%;
+}
+.dgkt-course-learn-wrap .head > .am-container .course-infor > div > div {
+  color: #ccc;
+}
+.dgkt-course-learn-wrap .head > .am-container .share {
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.dgkt-course-learn-wrap .head > .am-container .share i {
+  margin-right: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.dgkt-course-learn-wrap .head > .am-container .share i:nth-child(2):hover {
+  color: #3CE783;
+}
+.dgkt-course-learn-wrap .head > .am-container .share i:nth-child(3):hover {
+  color: #31B5F2;
+}
+.dgkt-course-learn-wrap .head > .am-container .share i:nth-child(4):hover {
+  color: #ED3538;
+}
+.dgkt-course-learn-wrap .head > .am-container .share i a {
+  text-decoration: none;
+}
+.dgkt-course-learn-wrap .content {
+  margin-top: 20px;
+  min-height: 550px;
+  padding: 0;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-nav {
+  height: 50px;
+  box-shadow: -1px 1px 10px #aeaeae;
+  line-height: 50px;
+  clear: both;
+  position: relative;
+  margin: 0 10px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-nav .nav-item {
+  display: inline-block;
+  float: left;
+  width: 25%;
+  text-decoration: none;
+  text-align: center;
+  color: #aeaeae;
+  cursor: pointer;
+  /*这是伪元素*/
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-nav .nav-item.active {
+  font-weight: 600;
+  color: #555;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-nav .nav-item:hover {
+  color: #555;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-nav .line {
+  position: absolute;
+  background: #aeaeae;
+  height: 26px;
+  width: 2px;
+  top: 12px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-nav .line:nth-child(5) {
+  left: 25%;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-nav .line:nth-child(6) {
+  left: 50%;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-nav .line:nth-child(7) {
+  left: 75%;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd .bd-item {
+  display: none;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd .bd-item.active {
+  display: block;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-detail {
+  padding: 10px 10px 40px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-detail .part {
+  margin: 15px 0;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-detail .part h3 {
+  margin-bottom: 5px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-detail .part > div {
+  text-indent: 2em;
+  color: #696969;
+  font-size: 15px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog {
+  padding: 0 10px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .top {
+  font-size: 18px;
+  color: #555;
+  margin: 20px 0;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options .option-item {
+  font-size: 19px;
+  color: #707070;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options .option-item.active {
+  font-size: 22px;
+  color: #555;
+  height: 50px;
+  line-height: 50px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options-bd {
+  padding: 0;
+  margin-bottom: 100px;
+  position: relative;
+  background: #f5f5f5;
+  box-shadow: 0 1px 10px #aeaeae ;
+  z-index: -1;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options-bd .triangle {
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px #aeaeae;
+  background: #f5f5f5;
+  z-index: -1;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options-bd .op-bd-item {
+  display: none;
+  background: #f5f5f5;
+  min-height: 250px;
+  padding: 30px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options-bd .op-bd-item .bar {
+  margin-bottom: 20px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options-bd .op-bd-item .bar h3 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options-bd .op-bd-item .bar p {
+  text-indent: 2em;
+  padding-left: 20px;
+  color: #aeaeae;
+  font-size: 15px;
+  margin: 0;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #learn-catalog .main .options-bd .active {
+  display: block;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment {
+  margin-bottom: 50px;
+  padding: 30px 10px 0;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment .comment-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment .comment-item .item-head {
+  position: relative;
+  padding-left: 60px;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 5px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment .comment-item .item-head .ball {
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f2dede;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment .comment-item .item-head .name {
+  color: #555;
+  font-weight: 600;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment .comment-item p {
+  margin: 0;
+  padding-left: 60px;
+  color: #707070;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment .comment-item .time {
+  color: #aeaeae;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 40px;
+  line-height: 40px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment .comment-item:nth-last-child(2) {
+  margin-bottom: 60px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #stu-comment .am-btn {
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  width: 120px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 32px;
+  border-radius: 16px;
+  color: #aeaeae;
+  text-align: center;
+  background: #f5f5f5;
+  border: 2px solid #A6A6A6;
+  cursor: pointer;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch {
+  margin-bottom: 50px;
+  padding-top: 30px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch ul {
+  margin-bottom: 50px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch ul li {
+  padding: 0 15px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch ul li .free-course {
+  box-shadow: 0 1px 10px #aeaeae;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch ul li .free-course img {
+  width: 100%;
+  background: #6FA5DB;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch ul li .free-course .intro {
+  background: #f5f5f5;
+  padding: 10px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch ul li .free-course .intro .course-name {
+  font-size: 16px;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch ul li .free-course .intro .course-intro {
+  color: #aeaeae;
+  font-size: 14px;
+  line-height: 18px;
+  height: 36px;
+  overflow: hidden;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch ul li .am-thumbnail {
+  padding: 0;
+  margin-bottom: 30px;
+}
+.dgkt-course-learn-wrap .content .dgkt-tabs .dgkt-tab-bd #free-watch .am-btn {
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  width: 120px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 32px;
+  border-radius: 16px;
+  color: #aeaeae;
+  text-align: center;
+  background: #f5f5f5;
+  border: 2px solid #A6A6A6;
+  cursor: pointer;
+}
+.dgkt-course-learn-wrap .content aside {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  padding-left: 45px;
+  margin-bottom: 80px;
+}
+.dgkt-course-learn-wrap .content aside .btn {
+  padding: 0;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.dgkt-course-learn-wrap .content aside .btn:nth-child(1) {
+  background: #99DBC8;
+}
+.dgkt-course-learn-wrap .content aside .btn:nth-child(2) {
+  background: #E83B3E;
+}
+.dgkt-course-learn-wrap .content aside .price-board {
+  margin-top: 25px;
+  border: 2px solid #696969;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+.dgkt-course-learn-wrap .content aside .price-board > div {
+  color: #aeaeae;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+.dgkt-course-learn-wrap .content aside .price-board .top {
+  padding: 20px 0 10px 0;
+  text-align: left;
+  border-bottom: 1px solid #aeaeae;
+  position: relative;
+  height: 80px;
+  line-height: 80px;
+}
+.dgkt-course-learn-wrap .content aside .price-board .top > div {
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  line-height: 1;
+}
+.dgkt-course-learn-wrap .content aside .price-board .top > div span {
+  font-size: 38px;
+  color: #F07528;
+  font-weight: 600;
+}
+.dgkt-course-learn-wrap .content aside .teacher {
+  margin-top: 20px;
+}
+.dgkt-course-learn-wrap .content aside .teacher > div {
+  font-size: 18px;
+  color: #696969;
+  margin-bottom: 10px;
+}
+.dgkt-course-learn-wrap .content aside .teacher section {
+  position: relative;
+  padding-left: 60px;
+}
+.dgkt-course-learn-wrap .content aside .teacher section .ball {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #82bffc;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+.dgkt-course-learn-wrap .content aside .teacher section .name {
+  color: #555;
+}
+.dgkt-course-learn-wrap .content aside .teacher section .intro {
+  font-size: 15px;
+  color: #aeaeae;
+}

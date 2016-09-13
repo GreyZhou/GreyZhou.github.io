@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie lte-ie8">
+<![endif]-->
+<!--[if gte IE 9 ]>
+<html class="ie gte-ie9">
+<![endif]-->
+<!--[if !IE]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习页面</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="../lib/css/amazeui.min.css">
+    <link rel="stylesheet" href="../lib/css/dgkt/learn.css">
+    <!-- <script src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script src="/static/components/sewise/3.2.0/sewise.player.min.js"></script>
+    <script src="/static/components/sewise/3.2.0/plugin/sewise.player.hlsjs.min.js"></script> -->
+    <script>
+        var __CONFIG__ = {
+            baseurl: "{$jsParams['baseurl']}",
+            siteurl: "{$jsParams['siteurl']}",
+            referer: "{$jsParams['referer']}",
+            module: "{$jsParams['module']}",
+            ctl:"{$jsParams['ctl']}",
+            action:"{$jsParams['action']}",
+            video: {
+                id: "{$info['id']}",
+                title: "{$info['title']}",
+                totalTime: "{$info['totalTime']}",
+                getvideo: '/Course/Video/getVideo',
+            },
+            msg : {
+                msgAll: "{:U('Msg/Index/getNewMsg')}",
+                getNewMsg: "{:U('Msg/Index/getNewMsg')}",
+                timeout: 10000,
+            },
+            passport: {
+                verify: "{:U('User/Passport/getVerify')}",
+                regurl : '/User/Passport/reg',
+                loginurl : '/User/Passport/login',
+                logouturl : '/User/Passport/logout',
+                getphoneverify : '/User/Passport/getPhoneVerify',
+                getpicverify : '/User/Passport/getVerify',
+                checkverify : '/User/Passport/checkVerify',
+                checkphone : '/User/Passport/checkPhone'
+            }
+        };
+        var userinfo = { uid: "{$userinfo['uid']}", nickname: "{$userinfo['nickname']}",avatar: "{$userinfo['avatar']}" }
+        if( userinfo.uid > 0) { __CONFIG__.passport.userinfo = userinfo; }
+    </script>
+</head>
+<body style="background: #f4f4f4">
+
+<include file="./Tpl/Common/header.html" />
+
+<section class="dgkt-course-learn-wrap">
+    <div class="head">
+        <!--限制内容位置-->
+        <div class="am-container">
+            <div class="course-intro">课程A-第2篇</div>
+            <div class="course-name">职业思维进阶</div>
+            <div class="course-infor">
+                <div>
+                    <div>难度</div>
+                    <span>初级课程</span>
+                </div>
+                <div>
+                    <div>总时长</div>
+                    <span>3小时20分</span>
+                </div>
+                <div>
+                    <div>学习人数</div>
+                    <span>320人</span>
+                </div>
+            </div>
+            <div class="share">
+                <i class="am-icon-heart-o" id="star"></i>
+                分享
+                <i class="am-icon-wechat"><a></a></i>
+                <i class="am-icon-qq"><a></a></i>
+                <i class="am-icon-weibo"><a></a></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="content am-container">
+        <div class="dgkt-tabs am-u-lg-9">
+            <div class="dgkt-tab-nav">
+                <a class="nav-item active">课程详情</a>
+                <a class="nav-item">课程目录</a>
+                <a class="nav-item">学员评论</a>
+                <a class="nav-item">免费试看</a>
+                <!--伪元素用的不好，暂时用这个代替-->
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="dgkt-tab-bd">
+                <div class="bd-item active" id="learn-detail">
+                    <div class="part">
+                        <h3>简介</h3>
+                        <div>
+                            实战姿势开始。两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后旋摆鞭打，同时上体向右转，带动右腿弧形摆至身体右侧，右腿屈膝回收；右脚落至右后成实战姿势。
+
+                        　　动作要领：转身、旋转、踢腿连贯进行，一气呵成，中间没有停顿；击打点应在正前方，呈水平弧线；屈膝起退的旋转速度要快；重心在原地旋转360度。后旋腿攻击的主要部位头面部和胸部。
+
+                        　　易犯错误：
+
+                        　　1、转身、踢腿中有停顿，二次发力；
+
+                        　　2、起腿太早，最高点，不在正前方；
+
+                        　　3、上身往前、往侧、往下，推动平衡；
+
+                        　　注意事项：
+                        　　此腿法动作较大，易暴露。易受到正踢、前踢、正蹬等腿法的反击。 </div>
+                    </div>
+                    <div class="part">
+                        <h3>简介</h3>
+                        <div>
+                            实战姿势开始。两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后旋摆鞭打，同时上体向右转，带动右腿弧形摆至身体右侧，右腿屈膝回收；右脚落至右后成实战姿势。
+
+                            　　动作要领：转身、旋转、踢腿连贯进行，一气呵成，中间没有停顿；击打点应在正前方，呈水平弧线；屈膝起退的旋转速度要快；重心在原地旋转360度。后旋腿攻击的主要部位头面部和胸部。
+
+                            　　易犯错误：
+
+                            　　1、转身、踢腿中有停顿，二次发力；
+
+                            　　2、起腿太早，最高点，不在正前方；
+
+                            　　3、上身往前、往侧、往下，推动平衡；
+
+                            　　注意事项：
+                            　　此腿法动作较大，易暴露。易受到正踢、前踢、正蹬等腿法的反击。 </div>
+                    </div>
+                    <div class="part">
+                        <h3>简介</h3>
+                        <div>
+                            实战姿势开始。两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后旋摆鞭打，同时上体向右转，带动右腿弧形摆至身体右侧，右腿屈膝回收；右脚落至右后成实战姿势。
+
+                            　　动作要领：转身、旋转、踢腿连贯进行，一气呵成，中间没有停顿；击打点应在正前方，呈水平弧线；屈膝起退的旋转速度要快；重心在原地旋转360度。后旋腿攻击的主要部位头面部和胸部。
+
+                            　　易犯错误：
+
+                            　　1、转身、踢腿中有停顿，二次发力；
+
+                            　　2、起腿太早，最高点，不在正前方；
+
+                            　　3、上身往前、往侧、往下，推动平衡；
+
+                            　　注意事项：
+                            　　此腿法动作较大，易暴露。易受到正踢、前踢、正蹬等腿法的反击。 </div>
+                    </div>
+                    <div class="part">
+                        <h3>简介</h3>
+                        <div>
+                            实战姿势开始。两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后旋摆鞭打，同时上体向右转，带动右腿弧形摆至身体右侧，右腿屈膝回收；右脚落至右后成实战姿势。
+
+                            　　动作要领：转身、旋转、踢腿连贯进行，一气呵成，中间没有停顿；击打点应在正前方，呈水平弧线；屈膝起退的旋转速度要快；重心在原地旋转360度。后旋腿攻击的主要部位头面部和胸部。
+
+                            　　易犯错误：
+
+                            　　1、转身、踢腿中有停顿，二次发力；
+
+                            　　2、起腿太早，最高点，不在正前方；
+
+                            　　3、上身往前、往侧、往下，推动平衡；
+
+                            　　注意事项：
+                            　　此腿法动作较大，易暴露。易受到正踢、前踢、正蹬等腿法的反击。 </div>
+                    </div>
+                </div>
+
+                <div class="bd-item" id="learn-catalog">
+                    <div class="top">4大章节24小节</div>
+
+                    <div class="main">
+                        <div class="options am-u-lg-2">
+                            <div class="option-item active">基础篇</div>
+                            <div class="option-item">运营篇</div>
+                            <div class="option-item">运行篇</div>
+                            <div class="option-item">结业篇</div>
+                        </div>
+                        <div class="options-bd am-u-lg-10">
+                            <div class="triangle"></div>
+                            <!--上面为三角形-->
+                            <div class="op-bd-item active">
+                                <div class="bar">
+                                    <h3>1.注册流程</h3>
+                                    <p>
+                                        奋斗吧少年，快去创造奇迹，我哈哈哈哈，实战姿势开始。
+                                        两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。
+                                        上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的
+                                        力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后
+                                        旋摆鞭打，同时上体向右转.
+                                    </p>
+                                </div>
+                                <div class="bar">
+                                    <h3>1.注册流程</h3>
+                                    <p>
+                                        奋斗吧少年，快去创造奇迹，我哈哈哈哈，实战姿势开始。
+                                        两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。
+                                        上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的
+                                        力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后
+                                        旋摆鞭打，同时上体向右转.
+                                    </p>
+                                </div>
+                                <div class="bar">
+                                    <h3>1.注册流程</h3>
+                                    <p>
+                                        奋斗吧少年，快去创造奇迹，我哈哈哈哈，实战姿势开始。
+                                        两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。
+                                        上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的
+                                        力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后
+                                        旋摆鞭打，同时上体向右转.
+                                    </p>
+                                </div>
+                                <div class="bar">
+                                    <h3>1.注册流程</h3>
+                                    <p>
+                                        奋斗吧少年，快去创造奇迹，我哈哈哈哈，实战姿势开始。
+                                        两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。
+                                        上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的
+                                        力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后
+                                        旋摆鞭打，同时上体向右转.
+                                    </p>
+                                </div>
+                                <div class="bar">
+                                    <h3>1.注册流程</h3>
+                                    <p>
+                                        奋斗吧少年，快去创造奇迹，我哈哈哈哈，实战姿势开始。
+                                        两脚以两脚掌为轴均内旋约180度，身体之右转约90度，两拳置于胸前。
+                                        上体右转，与双腿拧成一定角度。右脚蹬地将蹬地的力量与上体拧转的
+                                        力量全在一起，将右腿向后上以髋关节为轴直腿摆起，右腿继续向右后
+                                        旋摆鞭打，同时上体向右转.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="op-bd-item">456</div>
+                            <div class="op-bd-item">789</div>
+                            <div class="op-bd-item">10 11</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bd-item" id="stu-comment">
+                    <div class="comment-item">
+                        <div class="item-head">
+                            <img class="ball" src="">
+                            <div class="name">fzseven</div>
+                        </div>
+                        <p>
+                            哇哈哈哈哈哈哈哈哈，看得见风景爱上就打开就是看见个为基础卡侬个
+                            我让人家发 房间打扫房间玩IE就技术开发及自建房是打开房间诶我及方
+                            法就是的库存面积及。
+                        </p>
+                        <div class="time">2016-02-10</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="item-head">
+                            <img class="ball" src="">
+                            <div class="name">fzseven</div>
+                        </div>
+                        <p>
+                            哇哈哈哈哈哈哈哈哈，看得见风景爱上就打开就是看见个为基础卡侬个
+                            我让人家发 房间打扫房间玩IE就技术开发及自建房是打开房间诶我及方
+                            法就是的库存面积及。
+                        </p>
+                        <div class="time">2016-02-10</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="item-head">
+                            <img class="ball" src="">
+                            <div class="name">fzseven</div>
+                        </div>
+                        <p>
+                            哇哈哈哈哈哈哈哈哈，看得见风景爱上就打开就是看见个为基础卡侬个
+                            我让人家发 房间打扫房间玩IE就技术开发及自建房是打开房间诶我及方
+                            法就是的库存面积及。
+                        </p>
+                        <div class="time">2016-02-10</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="item-head">
+                            <img class="ball" src="">
+                            <div class="name">fzseven</div>
+                        </div>
+                        <p>
+                            哇哈哈哈哈哈哈哈哈，看得见风景爱上就打开就是看见个为基础卡侬个
+                            我让人家发 房间打扫房间玩IE就技术开发及自建房是打开房间诶我及方
+                            法就是的库存面积及。
+                        </p>
+                        <div class="time">2016-02-10</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="item-head">
+                            <img class="ball" src="">
+                            <div class="name">fzseven</div>
+                        </div>
+                        <p>
+                            哇哈哈哈哈哈哈哈哈，看得见风景爱上就打开就是看见个为基础卡侬个
+                            我让人家发 房间打扫房间玩IE就技术开发及自建房是打开房间诶我及方
+                            法就是的库存面积及。
+                        </p>
+                        <div class="time">2016-02-10</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="item-head">
+                            <img class="ball" src="">
+                            <div class="name">fzseven</div>
+                        </div>
+                        <p>
+                            哇哈哈哈哈哈哈哈哈，看得见风景爱上就打开就是看见个为基础卡侬个
+                            我让人家发 房间打扫房间玩IE就技术开发及自建房是打开房间诶我及方
+                            法就是的库存面积及。
+                        </p>
+                        <div class="time">2016-02-10</div>
+                    </div>
+
+                    <div class="am-btn">查看更多</div>
+                </div>
+
+                <div class="bd-item" id="free-watch">
+                    <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-3 am-thumbnails">
+                        <li>
+                            <div class="free-course am-thumbnail">
+                                <img src="">
+                                <div class="intro">
+                                    <div class="course-name">课程E</div>
+                                    <div class="course-intro">简单的介绍，尽量不超过两行，超过两行就隐藏掉，大概就这样，哦呵呵呵呵呵呵呵呵二和</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="free-course am-thumbnail">
+                                <img src="">
+                                <div class="intro">
+                                    <div class="course-name">课程E</div>
+                                    <div class="course-intro">简单的介绍，尽量不超过两行，超过两行就隐藏掉，大概就这样，哦呵呵呵呵呵呵呵呵二和</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="free-course am-thumbnail">
+                                <img src="">
+                                <div class="intro">
+                                    <div class="course-name">课程E</div>
+                                    <div class="course-intro">简单的介绍，尽量不超过两行，超过两行就隐藏掉，大概就这样，哦呵呵呵呵呵呵呵呵二和</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="free-course am-thumbnail">
+                                <img src="">
+                                <div class="intro">
+                                    <div class="course-name">课程E</div>
+                                    <div class="course-intro">简单的介绍，尽量不超过两行，超过两行就隐藏掉，大概就这样，哦呵呵呵呵呵呵呵呵二和</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="free-course am-thumbnail">
+                                <img src="">
+                                <div class="intro">
+                                    <div class="course-name">课程E</div>
+                                    <div class="course-intro">简单的介绍，尽量不超过两行，超过两行就隐藏掉，大概就这样，哦呵呵呵呵呵呵呵呵二和</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="free-course am-thumbnail">
+                                <img src="">
+                                <div class="intro">
+                                    <div class="course-name">课程E</div>
+                                    <div class="course-intro">简单的介绍，尽量不超过两行，超过两行就隐藏掉，大概就这样，哦呵呵呵呵呵呵呵呵二和</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="am-btn">查看更多</a>
+                </div>
+            </div>
+        </div>
+        <aside class="am-u-lg-3">
+            <a class="btn am-btn">免费试看</a>
+            <a class="btn am-btn">立即购买</a>
+            <div class="price-board">
+                <div class="top">
+                    价格:
+                    <div><span>125</span>元</div>
+                </div>
+                <div>243人试看</div>
+                <div>124人购买</div>
+                <div>6756条评论</div>
+            </div>
+            <div class="teacher">
+                <div>课程讲师</div>
+                <section>
+                    <img class="ball" src="">
+                    <div class="name">梁晓燕<img src=""></div>
+                    <div class="intro">资深新媒体职业导师</div>
+                </section>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<include file="./Tpl/Common/footer.html" />
+
+<include file="./Tpl/Common/login.html" />
+<!-- <script src="/static/js/require.js"></script>
+<script src="/static/js/app/config.js"></script> -->
+<!-- <script type="text/javascript">
+    $(function(){
+        require(["page/"+__CONFIG__.module+"/"+__CONFIG__.ctl+"/"+__CONFIG__.action]);
+    })
+</script> -->
+<script src="../lib/js/jquery.min.js"></script>
+<script src="../lib/js/dgkt/learn.js"></script>
+</body>
+</html>
